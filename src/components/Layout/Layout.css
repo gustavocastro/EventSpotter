@@ -1,0 +1,10 @@
+.layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    width: 69vw;
+    margin-left: 5vw;
+    padding: 60px 35px;
+}

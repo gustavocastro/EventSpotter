@@ -1,0 +1,37 @@
+.menuLeft {
+    position: fixed;
+    left: 0;
+    width: 5vw;
+    height: 100%;
+    background-color: #251F30;
+    border-right: 1px solid #2B2438;
+}
+
+.menuLeft > ul {
+    margin: 59px 0 0 0;
+    padding: 0;
+}
+
+.menuLeft > ul > li {
+    text-align: center;
+    display: block;
+    list-style: none;
+    width: 100%;
+    padding: 15px 0;
+    color: #574972;
+    transition: .25s all;
+}
+
+.menuLeft > ul > li:first-child {
+    border-top: 1px solid #2B2438;
+}
+
+.menuLeft > ul > li > small {
+    display: block;
+}
+
+.menuLeft > ul > li:hover {
+    color: #FFF;
+    background-color: #2B2438;
+    cursor: pointer;
+}

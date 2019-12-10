@@ -1,0 +1,21 @@
+.button {
+    padding: 6px 12px;
+    font-size: 1.2em;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.searchButton {
+    width: 100%;
+    background-color: #EF2D56;
+    color: #FFF;
+    font-weight: 700;
+    transition: .4s all;
+}
+
+.searchButton:hover {
+    background-color: #C62548;
+}

@@ -1,0 +1,10 @@
+.eventList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.eventList::after {
+  content: "";
+  flex: 0 1 32%;
+}

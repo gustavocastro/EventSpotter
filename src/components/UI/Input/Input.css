@@ -1,0 +1,45 @@
+::-webkit-input-placeholder { /* Edge */
+    color: #201B29;
+}
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #201B29;
+}
+  
+  ::placeholder {
+    color: #201B29;
+}
+
+.inputGroup {
+    margin-bottom: 10px;
+}
+
+.inputGroup:first-child {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2B2438;
+}
+
+.inputGroup input,
+.inputGroup select {
+    display: block;
+    width: 100%;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #8B75B7;
+    background-color: #2B2438;
+    border: none;
+    border-bottom: 2px solid #251F30;
+    padding: 4px 10px;
+    transition: .3s all;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+    outline: none;
+    border-bottom: 2px solid #EF2D56;
+}
+
+.inputLabel {
+    color: #574972;
+}
