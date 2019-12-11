@@ -7,10 +7,6 @@ import Button from '../../../UI/Button/Button'
 import * as actions from '../../../../store/actions/index'
 
 class MenuRight extends Component {
-    componentDidMount() {
-        this.props.onLoadEvents()
-    }
-
     render() {
         let inputElements = []
         for (let key in this.props.filters) {
@@ -50,8 +46,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key)),
-        onLoadEvents: () => dispatch(actions.getEvents())
+        onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key))
     }
 }
 

@@ -1,12 +1,16 @@
 import React from 'react'
 
 import classes from './MenuLeft.css'
-import { MusicNote, Fastfood, SportsSoccer } from '@material-ui/icons'
+import { Home, MusicNote, Fastfood, SportsSoccer } from '@material-ui/icons'
 
 const MenuLeft = () => {
     return (
         <aside className={classes.menuLeft}>
             <ul>
+                <li>
+                    <Home />
+                    <small>Home</small>
+                </li>
                 <li>
                     <MusicNote />
                     <small>Music</small>

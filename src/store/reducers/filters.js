@@ -55,12 +55,23 @@ const getEventsStart = (state, action) => {
     return { ...state, loading: true }
 }
 
-const getEventsStartSuccess = (state, action) => {
-    return { ...state, loading: false, events: action.events }
+const getEventsSuccess = (state, action) => {
+    return { 
+        ...state,
+        filtered: true, 
+        loading: false, 
+        events: action.events 
+    }
 }
 
-const getEventsStartFail = (state, action) => {
-    return { ...state, loading: false, error: action.error }
+const getEventsFail = (state, action) => {
+    return { 
+        ...state,
+        filtered: true, 
+        loading: false, 
+        events: [], 
+        error: action.error 
+    }
 }
 
 const reducer = (state = initialState, action) => {
@@ -70,9 +81,9 @@ const reducer = (state = initialState, action) => {
         case actionTypes.GET_EVENTS_START:
             return getEventsStart(state, action)
         case actionTypes.GET_EVENTS_SUCCESS:
-            return getEventsStartSuccess(state, action)
+            return getEventsSuccess(state, action)
         case actionTypes.GET_EVENTS_FAIL:
-            return getEventsStartFail(state, action)
+            return getEventsFail(state, action)
         default:
             return state
     }

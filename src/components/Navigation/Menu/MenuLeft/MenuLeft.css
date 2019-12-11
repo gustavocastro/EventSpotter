@@ -24,6 +24,7 @@
 
 .menuLeft > ul > li:first-child {
     border-top: 1px solid #2B2438;
+    background-color: #2B2438;
 }
 
 .menuLeft > ul > li > small {

@@ -6,4 +6,5 @@
     background-color: #251F30;
     border-left: 1px solid #2B2438;
     padding: 25px;
+    z-index: 100;
 }

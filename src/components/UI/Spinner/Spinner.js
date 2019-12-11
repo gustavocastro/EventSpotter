@@ -4,11 +4,13 @@ import classes from './Spinner.css'
 
 const Spinner = () => {
     return (
-        <div class={classes.ellipsis}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div className={classes.spinner}>
+            <div className={classes.ellipsis}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     )
 }

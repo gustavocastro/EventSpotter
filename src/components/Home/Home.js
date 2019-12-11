@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import classes from './Home.css'
@@ -13,7 +13,7 @@ class Home extends Component {
             homeContent = (
                 <div>
                     <h2>
-                        Popular in <label className={classes.label}>Somewhere</label>
+                        Popular events <label className={classes.label}>anywhere</label>
                     </h2>
 
                     <EventList />
@@ -22,9 +22,9 @@ class Home extends Component {
         }
 
         return (
-            <div>
+            <Fragment>
                 {homeContent}
-            </div>
+            </Fragment>
         )
     }
 }
