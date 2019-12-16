@@ -11,7 +11,7 @@ function App() {
     <Layout>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/event" component={Event} />
+        <Route path="/event/:id" component={Event} />
         <Redirect to="/not-found" component={NotFound} />
       </Switch>
     </Layout>

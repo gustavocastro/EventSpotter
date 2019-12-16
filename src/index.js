@@ -8,11 +8,13 @@ import thunk from 'redux-thunk'
 import './index.css';
 import App from './App';
 import filtersReducer from './store/reducers/filters'
+import eventReducer from './store/reducers/event'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({
-    filters: filtersReducer
+    filters: filtersReducer,
+    event: eventReducer
 })
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))

@@ -1,0 +1,15 @@
+.content {
+    margin-top: 25px;
+    color: #AC91E2;
+}
+
+.content h3 {
+    border-bottom: 1px solid #2B2438;
+    padding-bottom: 6px;
+}
+
+.content a {
+    display: flex;
+    text-decoration: none;
+    color: #EF2D56;
+}

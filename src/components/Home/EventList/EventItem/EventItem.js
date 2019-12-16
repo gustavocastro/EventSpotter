@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Event, Place, Map } from '@material-ui/icons';
 
 import classes from './EventItem.css'
+import imageFilter from '../../../../utilities/imageFilter'
 
 const iconStyle = {
     fontSize: '1.2em',
@@ -10,12 +11,12 @@ const iconStyle = {
 }
 
 const EventItem = (props) => {
-    let image = props.images.filter(img => img.ratio === '3_2' && img.width === 640)
+    let image = imageFilter(props.images, '3_2', 640)
 
     return (
-        <NavLink to="/event" className={classes.card}>
+        <Link to={'/event/'+props.id} className={classes.card}>
             <div className={classes.cardImg}>
-                <img src={image[0].url} alt={props.header} />
+                <img src={image.url} alt={props.header} />
             </div>
             <div className={classes.cardContent}>
                 <h3>{props.header}</h3>
@@ -36,7 +37,7 @@ const EventItem = (props) => {
                     </Fragment>
                 ))}
             </div>
-        </NavLink>
+        </Link>
     )
 }
 

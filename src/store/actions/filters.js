@@ -7,17 +7,17 @@ const getEventsStart = () => {
     }
 }
 
-const getEventSuccess = (events) => {
+const getEventsSuccess = (events) => {
     return {
         type: actionTypes.GET_EVENTS_SUCCESS,
-        events: events
+        events
     }
 }
 
-const getEventFail = (error) => {
+const getEventsFail = (error) => {
     return {
         type: actionTypes.GET_EVENTS_FAIL,
-        error: error
+        error
     }
 }
 
@@ -36,12 +36,11 @@ export const getEvents = () => {
         dispatch(getEventsStart())
         axios.get('/events')
              .then(res => {
-                 console.log(res.data._embedded.events)
-                 dispatch(getEventSuccess(res.data._embedded.events))
+                 dispatch(getEventsSuccess(res.data._embedded.events))
              })
              .catch(err => {
                  console.log(err)
-                 dispatch(getEventFail(err))
+                 dispatch(getEventsFail(err))
              })
     }
 }

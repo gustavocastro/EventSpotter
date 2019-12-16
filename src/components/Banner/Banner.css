@@ -1,13 +1,39 @@
 .banner {
-    width: 100%;
-    height: 45vh;
-    border-radius: 8px;
+    width: 110%;
+    margin-top: -20px;
+    margin-left: -35px;
+    padding: 30px 35px 10px 35px; 
+    background-color: #1D1926;
+    display: flex;
+    justify-content: space-between;
 }
 
-.content {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .62);
-    border-radius: 8px;
-    padding: 6px 20px;
+.banner img {
+    width: 18%;
+    height: 112px;
+    margin-right: 15px;
+}
+
+.info {
+    width: 80%;
+}
+
+.info p {
+    display: flex;
+    font-size: .8em;
+}
+
+.ticketButton {
+    width: 17%;
+}
+
+.ticketButton a {
+    display: flex;
+    color: #EF2D56;
+    text-decoration: none;
+    transition: .3s all;
+}
+
+.ticketButton a:hover {
+    color: #AC91E2;
 }

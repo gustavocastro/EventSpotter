@@ -37,7 +37,7 @@
 .inputGroup input:focus,
 .inputGroup select:focus {
     outline: none;
-    border-bottom: 2px solid #EF2D56;
+    border-bottom: 2px solid #8B75B7;
 }
 
 .inputLabel {

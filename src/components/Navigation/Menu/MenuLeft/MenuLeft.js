@@ -1,27 +1,33 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import classes from './MenuLeft.css'
-import { Home, MusicNote, Fastfood, SportsSoccer } from '@material-ui/icons'
+import { Home, Info, GitHub } from '@material-ui/icons'
 
 const MenuLeft = () => {
     return (
         <aside className={classes.menuLeft}>
             <ul>
                 <li>
-                    <Home />
-                    <small>Home</small>
+                    <Link to="/">
+                        <Home />
+                        <small>Home</small>
+                    </Link>
                 </li>
                 <li>
-                    <MusicNote />
-                    <small>Music</small>
+                    <Link to="/about">
+                        <Info />
+                        <small>About</small>
+                    </Link>
                 </li>
                 <li>
-                    <Fastfood />
-                    <small>Food</small>
-                </li>
-                <li>
-                    <SportsSoccer />
-                    <small>Sports</small>
+                    <a 
+                        href="https://github.com/gustavocastro/EventSpotter" 
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            <GitHub />
+                            <small>GitHub</small>
+                    </a>
                 </li>
             </ul>
         </aside>

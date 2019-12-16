@@ -7,7 +7,7 @@ import * as actions from '../../../store/actions/index'
 
 class EventList extends Component {
     componentDidMount() {
-        if (!this.props.filtered && !this.props.loading)
+        if (!this.props.filtered && !this.props.loading && !this.props.event)
             this.props.onGetEvents()
     }
 
@@ -17,6 +17,7 @@ class EventList extends Component {
                 {this.props.events.map(event => (
                     <EventItem
                         key={event.id}
+                        id={event.id}
                         header={event.name}
                         images={event.images}
                         date={event.dates.start.localDate}
