@@ -1,6 +1,8 @@
 export {
     setInputValue,
-    getEvents
+    getEvents,
+    filterEvents,
+    loadCategories
 } from './filters'
 export {
     getEventDetails

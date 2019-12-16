@@ -14,8 +14,10 @@
 }
 
 .cardImg {
+    display: inline-grid;
+    display: -moz-inline-grid;
+    display: -ms-inline-grid;
     width: 100%;
-    height: 178px;
     background-color: #8B75B7;
 }
 

@@ -14,7 +14,7 @@ const initialState = {
         startDate: {
             elementType: 'input',
             elementConfig: {
-                type: 'text',
+                type: 'date',
                 placeholder: 'Start Date'
             },
             value: '',
@@ -23,7 +23,7 @@ const initialState = {
         endDate: {
             elementType: 'input',
             elementConfig: {
-                type: 'text',
+                type: 'date',
                 placeholder: 'End Date'
             },
             value: '',
@@ -32,10 +32,7 @@ const initialState = {
         category: {
             elementType: 'select',
             elementConfig: {
-                options: [
-                    { value: 'music', description: 'Music' },
-                    { value: 'food', description: 'Food' }
-                ]
+                options: []
             },
             value: '',
             label: 'Your mood asks for:'
@@ -51,7 +48,26 @@ const setInputValue = (state, action) => {
     return { ...state, filters: action.filters }
 }
 
-const getEventsStart = (state, action) => {
+const loadCategoriesSuccess = (state, action) => {
+    return { 
+        ...state, 
+        filters: {
+            ...state.filters,
+            category: {
+                ...state.filters.category,
+                elementConfig: {
+                    options: action.categories
+                }
+            }
+        } 
+    }
+}
+
+const loadCategoriesFail = (state, action) => {
+    return { ...state, error: action.error }
+}
+
+const getEventsStart = (state) => {
     return { ...state, loading: true }
 }
 
@@ -74,16 +90,47 @@ const getEventsFail = (state, action) => {
     }
 }
 
+const filterEventsStart = (state) => {
+    return { ...state, loading: true }
+}
+
+const filterEventsSuccess = (state, action) => {
+    return {
+        ...state,
+        loading: false,
+        events: action.events
+    }
+}
+
+const filterEventsFail = (state, action) => {
+    return {
+        ...state,
+        loading: false,
+        events: [],
+        error: action.error
+    }
+}
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SET_INPUT_VALUE:
             return setInputValue(state, action)
+        case actionTypes.LOAD_CATEGORIES_SUCCESS:
+            return loadCategoriesSuccess(state, action)
+        case actionTypes.LOAD_CATEGORIES_FAIL:
+            return loadCategoriesFail(state, action)
         case actionTypes.GET_EVENTS_START:
-            return getEventsStart(state, action)
+            return getEventsStart(state)
         case actionTypes.GET_EVENTS_SUCCESS:
             return getEventsSuccess(state, action)
         case actionTypes.GET_EVENTS_FAIL:
             return getEventsFail(state, action)
+        case actionTypes.FILTER_EVENTS_START:
+            return filterEventsStart(state)
+        case actionTypes.FILTER_EVENTS_SUCCESS:
+            return filterEventsSuccess(state, action)
+        case actionTypes.FILTER_EVENTS_FAIL:
+            return filterEventsFail(state, action)
         default:
             return state
     }

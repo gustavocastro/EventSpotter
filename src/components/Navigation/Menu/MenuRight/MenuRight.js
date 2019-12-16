@@ -7,6 +7,10 @@ import Button from '../../../UI/Button/Button'
 import * as actions from '../../../../store/actions/index'
 
 class MenuRight extends Component {
+    componentDidMount() {
+        this.props.onLoadCategories()
+    }
+
     render() {
         let inputElements = []
         for (let key in this.props.filters) {
@@ -32,7 +36,8 @@ class MenuRight extends Component {
                 <Button 
                     type="submit"
                     btnStyle="searchButton"
-                    label="Find events" />
+                    label="Find events"
+                    clicked={() => this.props.onFilterEvents(this.props.filters)} />
             </aside>
         )
     }
@@ -46,7 +51,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key))
+        onLoadCategories: () => dispatch(actions.loadCategories()),
+        onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key)),
+        onFilterEvents: (filters) => dispatch(actions.filterEvents(filters))
     }
 }
 
