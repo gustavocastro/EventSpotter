@@ -38,7 +38,7 @@ class MenuRight extends Component {
                     type="submit"
                     btnStyle="searchButton"
                     label="Find events"
-                    clicked={() => this.props.onFilterEvents(this.props.history, this.props.filters)} />
+                    clicked={() => this.props.onGetEvents(this.props.filters, 0)} />
             </aside>
         )
     }
@@ -54,7 +54,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onLoadCategories: () => dispatch(actions.loadCategories()),
         onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key)),
-        onFilterEvents: (history, filters) => dispatch(actions.filterEvents(history, filters))
+        onGetEvents: (filters, page) => dispatch(actions.getEvents(filters, page))
     }
 }
 

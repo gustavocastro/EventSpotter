@@ -9,12 +9,12 @@ import * as actions from '../../../store/actions/index'
 class EventList extends Component {
     componentDidMount() {
         if (!this.props.filtered && !this.props.loading && !this.props.event)
-            this.props.onGetEvents()
+            this.props.onGetEvents(this.props.filters, this.props.currentPage)
     }
 
     handlePageChange = (page) => {
         if (this.props.currentPage !== page)
-            this.props.onGetEvents(page)
+            this.props.onGetEvents(this.props.filters, page)
     }
 
     render() {
@@ -48,6 +48,7 @@ class EventList extends Component {
 const mapStateToProps = state => {
     return {
         events: state.filters.events,
+        filters: state.filters.filters,
         filtered: state.filters.filtered,
         loading: state.filters.loading,
         currentPage: state.filters.currentPage,
@@ -57,7 +58,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetEvents: (page) => dispatch(actions.getEvents(page))
+        onGetEvents: (filters, page) => dispatch(actions.getEvents(filters, page))
     }
 }
 

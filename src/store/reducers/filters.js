@@ -94,27 +94,6 @@ const getEventsFail = (state, action) => {
     }
 }
 
-const filterEventsStart = (state) => {
-    return { ...state, loading: true }
-}
-
-const filterEventsSuccess = (state, action) => {
-    return {
-        ...state,
-        loading: false,
-        events: action.events
-    }
-}
-
-const filterEventsFail = (state, action) => {
-    return {
-        ...state,
-        loading: false,
-        events: [],
-        error: action.error
-    }
-}
-
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SET_INPUT_VALUE:
@@ -129,12 +108,6 @@ const reducer = (state = initialState, action) => {
             return getEventsSuccess(state, action)
         case actionTypes.GET_EVENTS_FAIL:
             return getEventsFail(state, action)
-        case actionTypes.FILTER_EVENTS_START:
-            return filterEventsStart(state)
-        case actionTypes.FILTER_EVENTS_SUCCESS:
-            return filterEventsSuccess(state, action)
-        case actionTypes.FILTER_EVENTS_FAIL:
-            return filterEventsFail(state, action)
         default:
             return state
     }

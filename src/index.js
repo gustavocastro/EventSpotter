@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router'
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
+import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
@@ -9,6 +10,8 @@ import './index.css';
 import App from './App';
 import filtersReducer from './store/reducers/filters'
 import eventReducer from './store/reducers/event'
+
+export const history = createBrowserHistory()
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
@@ -21,9 +24,9 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 const app = (
     <Provider store={store}>
-        <BrowserRouter>
+        <Router history={history}>
             <App />
-        </BrowserRouter>
+        </Router>
     </Provider>
 )
 
