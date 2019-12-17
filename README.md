@@ -1,4 +1,4 @@
-## Website in development
+## Website in development, some functionalities may not perform as expected
 
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
