@@ -1,0 +1,20 @@
+.about {
+    color: #AC91E2;
+}
+
+.about h2 {
+    border-bottom: 1px solid #2B2438;
+    padding-bottom: 6px;
+}
+
+.about > p > a {
+    margin-left: 6px;
+    text-decoration: none;
+    color: #EF2D56;
+    transition: .3s all;
+}
+
+.about > p > a:hover {
+    text-decoration: none;
+    color: #C62548;
+}

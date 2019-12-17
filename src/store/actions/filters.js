@@ -33,10 +33,15 @@ const getEventsStart = () => {
     }
 }
 
-const getEventsSuccess = (events) => {
+const getEventsSuccess = (events, page) => {
+    let updatedPage = { ...page }
+    if (updatedPage.totalPages > 55)
+        updatedPage.totalPages = 55
+
     return {
         type: actionTypes.GET_EVENTS_SUCCESS,
-        events
+        events,
+        page: updatedPage
     }
 }
 
@@ -90,12 +95,12 @@ export const loadCategories = () => {
     } 
 }
 
-export const getEvents = () => {
+export const getEvents = (page = 0) => {
     return dispatch => {
         dispatch(getEventsStart())
-        axios.get('/events')
+        axios.get('/events?size=18&page='+page)
              .then(res => {
-                 dispatch(getEventsSuccess(res.data._embedded.events))
+                 dispatch(getEventsSuccess(res.data._embedded.events, res.data.page))
              })
              .catch(err => {
                  console.log(err)
@@ -104,8 +109,9 @@ export const getEvents = () => {
     }
 }
 
-export const filterEvents = (params) => {
+export const filterEvents = (history, params) => {
     return dispatch => {
+        history.push('/')
         dispatch(filterEventsStart())
         let urlParams = `?city=${params.location.value}&startDateTime=${params.startDate.value}&endDateTime=${params.endDate.value}&classificationName=${params.category.value}`
         axios.get('/events'+urlParams)

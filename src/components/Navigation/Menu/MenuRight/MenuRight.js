@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 
 import classes from './MenuRight.css'
 import Input from '../../../UI/Input/Input';
@@ -37,7 +38,7 @@ class MenuRight extends Component {
                     type="submit"
                     btnStyle="searchButton"
                     label="Find events"
-                    clicked={() => this.props.onFilterEvents(this.props.filters)} />
+                    clicked={() => this.props.onFilterEvents(this.props.history, this.props.filters)} />
             </aside>
         )
     }
@@ -53,8 +54,8 @@ const mapDispatchToProps = dispatch => {
     return {
         onLoadCategories: () => dispatch(actions.loadCategories()),
         onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key)),
-        onFilterEvents: (filters) => dispatch(actions.filterEvents(filters))
+        onFilterEvents: (history, filters) => dispatch(actions.filterEvents(history, filters))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuRight)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(MenuRight))

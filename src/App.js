@@ -2,9 +2,10 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Layout from './components/Layout/Layout'
-import Home from './components/Home/Home';
+import Home from './containers/Home/Home';
 import NotFound from './components/NotFound/NotFound'
-import Event from './components/Event/Event';
+import Event from './containers/Event/Event'
+import About from './components/About/About'
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/event/:id" component={Event} />
-        <Redirect to="/not-found" component={NotFound} />
+        <Route path="/about" component={About} />
+        <Route path="/not-found" component={NotFound} />
+        <Redirect to="/not-found" />
       </Switch>
     </Layout>
   );

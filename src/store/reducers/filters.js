@@ -41,7 +41,9 @@ const initialState = {
     events: [],
     filtered: false,
     loading: false,
-    error: null
+    error: null,
+    currentPage: 0,
+    totalPages: 1
 }
 
 const setInputValue = (state, action) => {
@@ -76,7 +78,9 @@ const getEventsSuccess = (state, action) => {
         ...state,
         filtered: true, 
         loading: false, 
-        events: action.events 
+        events: action.events,
+        currentPage: action.page.number,
+        totalPages: action.page.totalPages 
     }
 }
 

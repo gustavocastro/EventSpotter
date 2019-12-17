@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 
 import classes from './Event.css'
-import Banner from '../Banner/Banner'
+import Banner from '../../components/Banner/Banner'
 import If from '../../hoc/If'
 import checkObject from '../../utilities/checkObject'
 import * as actions from '../../store/actions/index'
@@ -18,22 +18,28 @@ class Event extends Component {
     }
 
     handleInfoDisplay = () => {
+        let accessibility = ''
+
         let venues = this.props.event._embedded.venues.map(venue => (
             <div key={venue.id}>
                 <h4>{venue.name}</h4>
-                <p>{venue.generalInfo.generalRule}</p>
-                <p>{venue.generalInfo.childRule}</p>
+                
+                {venue.generalInfo ? (
+                    <Fragment>
+                        <p>{venue.generalInfo.generalRule}</p>
+                        <p>{venue.generalInfo.childRule}</p>
+                    </Fragment>
+                ) : null}
 
                 {venue.parkingDetail ? (
                     <Fragment>
                         <h4>Parking</h4>
                         <p>{venue.parkingDetail}</p>
                     </Fragment>
-                ) : ''}
+                ) : null}
             </div>
         ))
-
-        let accessibility = ''
+        
         if (this.props.event.accessibility) {
             accessibility = (
                 <Fragment>
