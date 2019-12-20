@@ -15,3 +15,16 @@ h3 {
     justify-content: center;
     z-index: 50;
 }
+
+@media (max-width: 1050px) {
+    .toolbar {
+        width: 70vw;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 962px) {
+    .toolbar {
+        width: 100vw;
+    }
+}

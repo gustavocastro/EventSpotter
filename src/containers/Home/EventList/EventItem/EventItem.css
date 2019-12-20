@@ -35,3 +35,9 @@
     color: #8B75B7;
     display: flex;
 }
+
+@media (max-width: 680px) {
+    .card {
+        flex: 0 1 48%;
+    }
+}

@@ -1,5 +1,5 @@
 .banner {
-    width: 110%;
+    width: 70vw;
     margin-top: -20px;
     margin-left: -35px;
     padding: 30px 35px 10px 35px; 
@@ -36,4 +36,20 @@
 
 .ticketButton a:hover {
     color: #AC91E2;
+}
+
+@media (max-width: 962px) {
+    .banner {
+        width: 98vw;
+    }
+}
+
+@media (max-width: 726px) {
+    .banner {
+        width: 97vw;
+    }
+
+    .banner img {
+        width: 22%;
+    }
 }

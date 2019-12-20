@@ -43,3 +43,9 @@
     background-color: #2B2438;
     cursor: pointer;
 }
+
+@media (max-width: 1050px) {
+    .menuLeft {
+        display: none;
+    }
+}

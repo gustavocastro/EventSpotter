@@ -6,5 +6,85 @@
     background-color: #251F30;
     border-left: 1px solid #2B2438;
     padding: 25px;
+    transition: transform 0.3s ease-out;
     z-index: 100;
+}
+
+.options {
+    display: none;
+    color: #574972;
+}
+
+.closeButton svg {
+    cursor: pointer;
+    display: none;
+}
+
+.links {
+    margin-top: 15px;
+}
+
+.links ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links span {
+    margin-left: 3px;
+}
+
+.links ul li a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: .3s all;
+}
+
+.links ul li a:hover {
+    color: #FFF;
+}
+
+
+@media (max-width: 1050px) {
+    .menuRight {
+        width: 32vw;
+    }
+
+    .options {
+        display: block;
+    }
+}
+
+@media (max-width: 962px) {
+    .menuRight {
+        width: 35vw;
+    }
+
+    .closeButton svg {
+        display: block;
+    }
+    
+    .open {
+        transform: translateX(0);
+    }
+
+    .close {
+        transform: translateX(100%);
+    }
+}
+
+@media (max-width: 880px) {
+    .menuRight {
+        width: 45vw;
+    }
+}
+
+@media (max-width: 680px) {
+    .menuRight {
+        width: 55vw;
+    }
 }

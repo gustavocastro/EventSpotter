@@ -32,7 +32,14 @@ const initialState = {
         category: {
             elementType: 'select',
             elementConfig: {
-                options: []
+                options: [
+                    { value: '', description: '' },
+                    { value: 'miscellaneous', description: 'Miscellaneous' },
+                    { value: 'sports', description: 'Sports' },
+                    { value: 'music', description: 'Music' },
+                    { value: 'arts & theatre', description: 'Arts & Theatre' },
+                    { value: 'film', description: 'Film' }
+                ]
             },
             value: '',
             label: 'Your mood asks for:'
@@ -48,25 +55,6 @@ const initialState = {
 
 const setInputValue = (state, action) => {
     return { ...state, filters: action.filters }
-}
-
-const loadCategoriesSuccess = (state, action) => {
-    return { 
-        ...state, 
-        filters: {
-            ...state.filters,
-            category: {
-                ...state.filters.category,
-                elementConfig: {
-                    options: action.categories
-                }
-            }
-        } 
-    }
-}
-
-const loadCategoriesFail = (state, action) => {
-    return { ...state, error: action.error }
 }
 
 const getEventsStart = (state) => {
@@ -98,10 +86,6 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.SET_INPUT_VALUE:
             return setInputValue(state, action)
-        case actionTypes.LOAD_CATEGORIES_SUCCESS:
-            return loadCategoriesSuccess(state, action)
-        case actionTypes.LOAD_CATEGORIES_FAIL:
-            return loadCategoriesFail(state, action)
         case actionTypes.GET_EVENTS_START:
             return getEventsStart(state)
         case actionTypes.GET_EVENTS_SUCCESS:

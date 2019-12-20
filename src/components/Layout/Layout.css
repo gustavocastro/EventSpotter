@@ -8,3 +8,16 @@
     margin-left: 5vw;
     padding: 60px 35px;
 }
+
+@media (max-width: 1050px) {
+    .content {
+        width: 67vw;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 962px) {
+    .content {
+        width: 97vw;
+    }
+}
