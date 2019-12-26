@@ -1,5 +1,4 @@
 import React from 'react'
-import { Menu } from '@material-ui/core'
 
 import classes from './MenuToggle.css'
 

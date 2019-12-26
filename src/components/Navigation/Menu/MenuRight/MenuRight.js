@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Link, withRouter } from 'react-router-dom'
-import { Close, Home, Info, GitHub } from '@material-ui/icons'
+import { withRouter } from 'react-router-dom'
 
 import classes from './MenuRight.css'
 import Input from '../../../UI/Input/Input';
 import Button from '../../../UI/Button/Button'
 import Overlay from '../../../UI/Overlay/Overlay'
 import MenuToggle from './MenuToggle/MenuToggle'
+import Links from '../../Links/Links'
 import * as actions from '../../../../store/actions/index'
 
 class MenuRight extends Component {
@@ -41,33 +41,9 @@ class MenuRight extends Component {
                 <Overlay show={this.state.open} />
 
                 <aside className={style.join(' ')}>
-                    <div className={classes.options}>
-                        <div className={classes.closeButton}>
-                            <Close onClick={this.toggleMenuHandler} />
-                        </div>
-                        <div className={classes.links}>
-                            <ul>
-                                <li>
-                                    <Link to='/'>
-                                        <Home />
-                                        <span>Home</span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to='/about'>
-                                        <Info /> 
-                                        <span>About</span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <a href="https://github.com/gustavocastro/EventSpotter" target="_blank" rel="noopener noreferrer">
-                                        <GitHub />
-                                        <span>GitHub</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <Links 
+                        style={classes} 
+                        toggleMenu={this.toggleMenuHandler} />
 
                     <h2>Filters</h2>
 

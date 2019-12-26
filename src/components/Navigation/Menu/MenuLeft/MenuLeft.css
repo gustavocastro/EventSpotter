@@ -3,17 +3,22 @@
     left: 0;
     width: 5vw;
     height: 100%;
+    font-size: .85em;
+    text-align: center;
     background-color: #251F30;
     border-right: 1px solid #2B2438;
 }
 
-.menuLeft > ul {
+.linksClose {
+    display: none;
+}
+
+.linksList ul {
     margin: 59px 0 0 0;
     padding: 0;
 }
 
-.menuLeft > ul > li {
-    text-align: center;
+.linksList > ul > li {
     display: block;
     list-style: none;
     width: 100%;
@@ -21,11 +26,11 @@
     transition: .25s all;
 }
 
-.menuLeft > ul > li:first-child {
+.linksList > ul > li:first-child {
     border-top: 1px solid #2B2438;
 }
 
-.menuLeft > ul > li > a {
+.linksList > ul > li > a {
     color: inherit;
     text-decoration: none;
     width: 100%;
@@ -34,11 +39,11 @@
     padding: 15px 0;
 }
 
-.menuLeft > ul > li > small {
+.linksList > ul > li > small {
     display: block;
 }
 
-.menuLeft > ul > li:hover {
+.linksList > ul > li:hover {
     color: #FFF;
     background-color: #2B2438;
     cursor: pointer;

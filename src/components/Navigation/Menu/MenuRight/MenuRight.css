@@ -10,21 +10,21 @@
     z-index: 100;
 }
 
-.options {
+.links {
     display: none;
     color: #574972;
 }
 
-.closeButton svg {
+.linksClose svg {
     cursor: pointer;
     display: none;
 }
 
-.links {
+.linksList {
     margin-top: 15px;
 }
 
-.links ul {
+.linksList ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -32,11 +32,11 @@
     justify-content: space-between;
 }
 
-.links span {
+.linksList span {
     margin-left: 3px;
 }
 
-.links ul li a {
+.linksList ul li a {
     color: inherit;
     text-decoration: none;
     display: flex;
@@ -44,7 +44,7 @@
     transition: .3s all;
 }
 
-.links ul li a:hover {
+.linksList ul li a:hover {
     color: #FFF;
 }
 
@@ -54,7 +54,7 @@
         width: 32vw;
     }
 
-    .options {
+    .links {
         display: block;
     }
 }
@@ -64,7 +64,7 @@
         width: 35vw;
     }
 
-    .closeButton svg {
+    .linksClose svg {
         display: block;
     }
     
