@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import { Event, Place, Map, LocalOffer } from '@material-ui/icons';
+import { Event, Place, Map, LocalOffer } from '@material-ui/icons'
+import Moment from 'react-moment'
 
 import classes from './Banner.css'
 import imageFilter from '../../utilities/imageFilter'
@@ -20,7 +21,11 @@ const Banner = (props) => {
                 <h3>{props.title}</h3>
                 <p>
                     <Event style={iconStyle} />
-                    <span>{props.dates.start.localDate}</span>
+                    <span>
+                        <Moment format="ddd [&#8226;] ll">
+                            {props.dates.start.localDate}
+                        </Moment>
+                    </span>
                 </p>
                 {props.details.venues.map(venue => (
                     <Fragment key={venue.id}>

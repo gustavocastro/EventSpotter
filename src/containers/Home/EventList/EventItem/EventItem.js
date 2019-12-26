@@ -4,6 +4,7 @@ import { Event, Place, Map } from '@material-ui/icons';
 
 import classes from './EventItem.css'
 import imageFilter from '../../../../utilities/imageFilter'
+import Moment from 'react-moment';
 
 const iconStyle = {
     fontSize: '1.2em',
@@ -22,7 +23,9 @@ const EventItem = (props) => {
                 <h3>{props.header}</h3>
                 <p>
                     <Event style={iconStyle} />
-                    <span>{props.date}</span>
+                    <span>
+                        <Moment format="ddd [&#8226;] ll">{props.date}</Moment>
+                    </span>
                 </p>
                 {props.venues.map(venue => (
                     <Fragment key={venue.id}>
