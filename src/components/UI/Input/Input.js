@@ -1,6 +1,7 @@
 import React from 'react'
 
-import classes from './Input.css';
+import DatePicker from 'react-datepicker'
+import classes from './Input.css'
 
 const Input = (props) => {
     let inputElement = ''
@@ -25,6 +26,15 @@ const Input = (props) => {
                             </option>
                         ))}
                 </select>
+            )
+            break
+        case 'datePicker':
+            inputElement = (
+                <DatePicker
+                    selected={props.value}
+                    onChange={props.changed}
+                    dateFormat="MMMM d, yyyy"
+                    showPopperArrow={false} />
             )
             break
         default:

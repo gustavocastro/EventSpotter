@@ -5,6 +5,7 @@ import ReactPaginate from 'react-paginate'
 import classes from './EventList.css';
 import EventItem from './EventItem/EventItem';
 import * as actions from '../../../store/actions/index'
+import If from '../../../hoc/If';
 
 class EventList extends Component {
     componentDidMount() {
@@ -21,25 +22,27 @@ class EventList extends Component {
         return (
             <Fragment>
                 <div className={classes.eventList}>
-                    {this.props.events.map(event => (
+                    {this.props.events.length ? this.props.events.map(event => (
                         <EventItem
                             key={event.id}
                             id={event.id}
                             header={event.name}
                             images={event.images}
                             date={event.dates.start.localDate}
-                            venues={event._embedded.venues} />
-                    ))}
+                            venues={event._embedded ? event._embedded.venues : []} />
+                    )) : <h3>No events found</h3>}
                 </div>
 
-                <div className={classes.pagination}>
-                    <ReactPaginate
-                        initialPage={this.props.currentPage}
-                        pageCount={this.props.totalPages}
-                        onPageChange={(data) => this.handlePageChange(data.selected)}
-                        disabledClassName={classes.disabled}
-                        activeClassName={classes.active} />
-                </div>
+                <If condition={this.props.events.length}>
+                    <div className={classes.pagination}>
+                        <ReactPaginate
+                            initialPage={this.props.currentPage}
+                            pageCount={this.props.totalPages}
+                            onPageChange={(data) => this.handlePageChange(data.selected)}
+                            disabledClassName={classes.disabled}
+                            activeClassName={classes.active} />
+                    </div>
+                </If>
             </Fragment>
         )
     }

@@ -5,26 +5,23 @@ const initialState = {
         location: {
             elementType: 'input',
             elementConfig: {
-                type: 'text',
-                placeholder: 'Where?'
+                type: 'text'
             },
             value: '',
             label: 'The ideal location'
         },
         startDate: {
-            elementType: 'input',
+            elementType: 'datePicker',
             elementConfig: {
-                type: 'date',
-                placeholder: 'Start Date'
+                type: 'text'
             },
             value: '',
             label: 'From'
         },
         endDate: {
-            elementType: 'input',
+            elementType: 'datePicker',
             elementConfig: {
-                type: 'date',
-                placeholder: 'End Date'
+                type: 'text'
             },
             value: '',
             label: 'To'

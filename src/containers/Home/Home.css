@@ -1,4 +1,9 @@
 .span {
     color: #EF2D56;
-    text-transform: capitalize;
+}
+
+@media (max-width: 680px) {
+    .home h2 {
+        font-size: 1.3em;
+    }
 }

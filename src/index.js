@@ -6,10 +6,12 @@ import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
-import './index.css';
-import App from './App';
+import App from './App'
 import filtersReducer from './store/reducers/filters'
 import eventReducer from './store/reducers/event'
+
+import './index.css'
+import 'react-datepicker/dist/react-datepicker-cssmodules.css'
 
 export const history = createBrowserHistory()
 

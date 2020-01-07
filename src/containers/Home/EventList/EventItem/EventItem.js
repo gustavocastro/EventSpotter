@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import { Event, Place, Map } from '@material-ui/icons';
+import { Event, Place, Map } from '@material-ui/icons'
+import If from '../../../../hoc/If'
 
 import classes from './EventItem.css'
 import imageFilter from '../../../../utilities/imageFilter'
@@ -29,10 +30,12 @@ const EventItem = (props) => {
                 </p>
                 {props.venues.map(venue => (
                     <Fragment key={venue.id}>
-                        <p>
-                            <Place style={iconStyle} />
-                            <span>{venue.name}</span>
-                        </p>
+                        <If condition={venue.name}>
+                            <p>
+                                <Place style={iconStyle} />
+                                <span>{venue.name}</span>
+                            </p>
+                        </If>
                         <p>
                             <Map style={iconStyle} />
                             <span>{venue.city.name}, {venue.country.countryCode}</span>

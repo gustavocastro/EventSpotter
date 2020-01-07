@@ -1,6 +1,8 @@
 **Note: this project is still in development. Some functionalities may not perform as expected!**
 
-This project was created using React 16.12.0.
+Demo: https://event-spotter-1c607.firebaseapp.com/
+
+Created using React 16.12.0.
 
 ## The Project
 

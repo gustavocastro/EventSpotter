@@ -38,6 +38,6 @@
 
 @media (max-width: 680px) {
     .card {
-        flex: 0 1 48%;
+        flex: 0 1 100%;
     }
 }

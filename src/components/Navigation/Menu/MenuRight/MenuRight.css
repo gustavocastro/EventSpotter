@@ -88,3 +88,9 @@
         width: 55vw;
     }
 }
+
+@media (max-width: 580px) {
+    .menuRight {
+        width: 85vw;
+    }
+}
