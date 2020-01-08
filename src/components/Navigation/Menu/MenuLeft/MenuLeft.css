@@ -39,6 +39,11 @@
     padding: 15px 0;
 }
 
+.linksList > ul > li > a > svg {
+    display: block;
+    margin: auto;
+}
+
 .linksList > ul > li > small {
     display: block;
 }

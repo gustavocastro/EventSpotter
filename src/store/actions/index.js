@@ -5,3 +5,6 @@ export {
 export {
     getEventDetails
 } from './event'
+export {
+    toggleMenuRight
+} from './menu'

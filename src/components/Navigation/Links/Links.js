@@ -12,15 +12,17 @@ const Links = (props) => {
             <div className={props.style.linksList}>
                 <ul>
                     <li>
-                        <Link to='/'>
-                            <Home />
-                            <span>Home</span>
+                        <Link 
+                            to={{pathname: '/', state: {from: window.location.pathname}}}>
+                                <Home />
+                                <span>Home</span>
                         </Link>
                     </li>
                     <li>
-                        <Link to='/about'>
-                            <Info />
-                            <span>About</span>
+                        <Link 
+                            to={{pathname: '/about', state: {from: window.location.pathname}}}>
+                                <Info />
+                                <span>About</span>
                         </Link>
                     </li>
                     <li>

@@ -16,7 +16,9 @@ const EventItem = (props) => {
     let image = imageFilter(props.images, '3_2', 640)
 
     return (
-        <Link to={'/event/'+props.id} className={classes.card}>
+        <Link 
+            to={{pathname: '/event/'+props.id, state: {from: window.location.pathname}}} 
+            className={classes.card}>
             <div className={classes.cardImg}>
                 <img src={image.url} alt={props.header} />
             </div>

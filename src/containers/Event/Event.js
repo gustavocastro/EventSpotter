@@ -83,9 +83,9 @@ class Event extends Component {
                 <div className={classes.content}>
                     <h3>Event Info</h3>
                     {info}
-                    <EventMap
+                    {/* <EventMap
                         lat={+location.latitude}
-                        lng={+location.longitude} />
+                        lng={+location.longitude} /> */}
                 </div>
             </div>
         )
