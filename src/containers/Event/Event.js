@@ -4,9 +4,11 @@ import If from '../../hoc/If'
 
 import classes from './Event.css'
 import Banner from '../../components/Banner/Banner'
-import EventMap from './Map/Map'
+import EventMap from './EventMap/EventMap'
 import checkObject from '../../utilities/checkObject'
 import * as actions from '../../store/actions/index'
+
+const TOKEN = 'pk.eyJ1IjoiZ3VzdGF2b2Nhc3RybyIsImEiOiJjazU2eHhtYm4wZGp3M2VtcndhcGwwODRxIn0.WPYFl__cexVnS-1OcF45VA'
 
 class Event extends Component {
     componentDidMount() {
@@ -83,9 +85,10 @@ class Event extends Component {
                 <div className={classes.content}>
                     <h3>Event Info</h3>
                     {info}
-                    {/* <EventMap
+                    <EventMap
+                        token={TOKEN}
                         lat={+location.latitude}
-                        lng={+location.longitude} /> */}
+                        lng={+location.longitude} />
                 </div>
             </div>
         )
