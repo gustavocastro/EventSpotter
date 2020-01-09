@@ -7,8 +7,8 @@ const toggleMenu = (open) => {
     }
 }
 
-export const toggleMenuRight = (state) => {
+export const toggleMenuRight = (open) => {
     return dispatch => {
-        dispatch(toggleMenu(state.open))
+        dispatch(toggleMenu(open))
     }
 }

@@ -4,7 +4,7 @@ const initialState = {
     open: false
 }
 
-toggleMenu = (state, action) => {
+const toggleMenu = (state, action) => {
     return { ...state, open: action.open }
 }
 

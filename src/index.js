@@ -9,9 +9,10 @@ import thunk from 'redux-thunk'
 import App from './App'
 import filtersReducer from './store/reducers/filters'
 import eventReducer from './store/reducers/event'
+import menuReducer from './store/reducers/menu'
 
 import './index.css'
-import 'react-datepicker/dist/react-datepicker-cssmodules.css'
+import './assets/css/datepicker-cssmodules.css'
 
 export const history = createBrowserHistory()
 
@@ -19,7 +20,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({
     filters: filtersReducer,
-    event: eventReducer
+    event: eventReducer,
+    menu: menuReducer
 })
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))

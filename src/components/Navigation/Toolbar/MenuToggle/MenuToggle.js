@@ -1,4 +1,5 @@
 import React from 'react'
+import { Menu } from '@material-ui/icons'
 
 import classes from './MenuToggle.css'
 
@@ -7,9 +8,7 @@ const MenuToggle = (props) => {
         <div 
             className={classes.toggle}
             onClick={props.click}>
-                <div></div>
-                <div></div>
-                <div></div>
+                <Menu />
         </div>
     )
 }

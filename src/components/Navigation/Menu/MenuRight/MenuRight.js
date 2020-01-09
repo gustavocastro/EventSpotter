@@ -6,19 +6,10 @@ import classes from './MenuRight.css'
 import Input from '../../../UI/Input/Input';
 import Button from '../../../UI/Button/Button'
 import Overlay from '../../../UI/Overlay/Overlay'
-import MenuToggle from './MenuToggle/MenuToggle'
 import Links from '../../Links/Links'
 import * as actions from '../../../../store/actions/index'
 
 class MenuRight extends Component {
-    state = {
-        open: false
-    }
-
-    toggleMenuHandler = () => {
-        this.setState({ open: !this.state.open })
-    }
-
     render() {
         let inputElements = []
         let style = []
@@ -30,20 +21,19 @@ class MenuRight extends Component {
             })
         }
 
-        if (this.state.open)
+        if (this.props.openMenu)
             style = [classes.menuRight, classes.open]
         else
             style = [classes.menuRight, classes.close]
 
         return (
             <Fragment>
-                <MenuToggle click={this.toggleMenuHandler} />
-                <Overlay show={this.state.open} />
+                <Overlay show={this.props.openMenu} />
 
                 <aside className={style.join(' ')}>
                     <Links 
                         style={classes} 
-                        toggleMenu={this.toggleMenuHandler} />
+                        toggleMenu={() => this.props.onToggleMenu(!this.props.openMenu)} />
 
                     <h2>Filters</h2>
 
@@ -69,14 +59,16 @@ class MenuRight extends Component {
 
 const mapStateToProps = state => {
     return {
-        filters: state.filters.filters
+        filters: state.filters.filters,
+        openMenu: state.menu.open
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key)),
-        onGetEvents: (filters, page) => dispatch(actions.getEvents(filters, page))
+        onGetEvents: (filters, page) => dispatch(actions.getEvents(filters, page)),
+        onToggleMenu: (open) => dispatch(actions.toggleMenuRight(open))
     }
 }
 

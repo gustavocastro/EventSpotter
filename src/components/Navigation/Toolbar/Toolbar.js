@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import * as actions from '../../../store/actions/index'
 import { ArrowBack } from '@material-ui/icons'
 import If from '../../../hoc/If'
 
-import MenuToggle from '../Menu/MenuRight/MenuToggle/MenuToggle'
+import MenuToggle from './MenuToggle/MenuToggle'
 import classes from './Toolbar.css'
 
 class Toolbar extends Component {
@@ -36,15 +38,28 @@ class Toolbar extends Component {
                             <ArrowBack />
                         </If>
                 </div>
-                <div>
+                <div className={classes.brand}>
                     <h3>Event Spotter</h3>
                 </div>
-                <nav>
-                    <MenuToggle />
+                <nav className={classes.toggle}>
+                    <MenuToggle
+                        click={() => this.props.onMenuClick(!this.props.open)} />
                 </nav>
             </header>
         )
     }
 }
 
-export default withRouter(Toolbar)
+const mapStateToProps = state => {
+    return {
+        open: state.menu.open
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onMenuClick: (open) => dispatch(actions.toggleMenuRight(open)) 
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Toolbar))

@@ -46,7 +46,7 @@
 
 @media (max-width: 726px) {
     .banner {
-        width: 97vw;
+        width: 100vw;
     }
 
     .banner img {
@@ -55,7 +55,19 @@
 }
 
 @media (max-width: 680px) {
+    .banner {
+        display: block;
+    }
+
     .banner img {
         display: none;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .ticketButton {
+        width: 100%;
     }
 }

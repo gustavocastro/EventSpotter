@@ -1,10 +1,5 @@
 .toggle {
-    position: fixed;
-    top: 3vh;
-    right: 35px;
-    width: 30px;
     cursor: pointer;
-    z-index: 50;
 }
 
 .toggle div {
