@@ -1,10 +1,7 @@
 import React from 'react'
-import { configure, shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+import { shallow } from 'enzyme'
 
 import Banner from './Banner'
-
-configure({adapter: new Adapter()})
 
 describe('<Banner />', () => {
     let banner
