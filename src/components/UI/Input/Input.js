@@ -17,6 +17,7 @@ const Input = (props) => {
             inputElement = (
                 <select
                     value={props.value}
+                    id={props.elementConfig.id}
                     onChange={props.changed}>
                         {props.elementConfig.options.map(option => (
                             <option
@@ -34,7 +35,8 @@ const Input = (props) => {
                     selected={props.value}
                     onChange={props.changed}
                     dateFormat="MMMM d, yyyy"
-                    showPopperArrow={false} />
+                    showPopperArrow={false}
+                    id={props.elementConfig.id} />
             )
             break
         default:
@@ -47,7 +49,7 @@ const Input = (props) => {
 
     return (
         <div className={classes.inputGroup}>
-            <label className={classes.inputLabel}>
+            <label className={classes.inputLabel} htmlFor={props.elementConfig.id}>
                 <small>{props.label}</small>
             </label>
             {inputElement}

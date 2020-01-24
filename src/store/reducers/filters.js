@@ -5,7 +5,8 @@ const initialState = {
         location: {
             elementType: 'input',
             elementConfig: {
-                type: 'text'
+                type: 'text',
+                id: 'location'
             },
             value: '',
             label: 'The ideal location'
@@ -13,7 +14,8 @@ const initialState = {
         startDate: {
             elementType: 'datePicker',
             elementConfig: {
-                type: 'text'
+                type: 'text',
+                id: 'startDate'
             },
             value: '',
             label: 'From'
@@ -21,7 +23,8 @@ const initialState = {
         endDate: {
             elementType: 'datePicker',
             elementConfig: {
-                type: 'text'
+                type: 'text',
+                id: 'endDate'
             },
             value: '',
             label: 'To'
@@ -36,7 +39,8 @@ const initialState = {
                     { value: 'music', description: 'Music' },
                     { value: 'arts & theatre', description: 'Arts & Theatre' },
                     { value: 'film', description: 'Film' }
-                ]
+                ],
+                id: 'category'
             },
             value: '',
             label: 'Your mood asks for:'
