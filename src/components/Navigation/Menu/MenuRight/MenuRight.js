@@ -50,7 +50,7 @@ class MenuRight extends Component {
                         type="submit"
                         btnStyle="searchButton"
                         label="Find events"
-                        clicked={() => this.props.onGetEvents(this.props.filters, 0)} />
+                        clicked={() => this.props.onGetEvents(this.props.filters, 0, this.props.history)} />
                 </aside>
             </Fragment>
         )
@@ -67,7 +67,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onSetInputValue: (e, state, key) => dispatch(actions.setInputValue(e, state, key)),
-        onGetEvents: (filters, page) => dispatch(actions.getEvents(filters, page)),
+        onGetEvents: (filters, page, history) => dispatch(actions.getEvents(filters, page, history)),
         onToggleMenu: (open) => dispatch(actions.toggleMenuRight(open))
     }
 }

@@ -1,5 +1,4 @@
 import axios from '../../axios'
-import { history } from '../../index'
 import { ISODateForAPIParams } from '../../utilities/formatDates'
 import * as actionTypes from './actionTypes'
 
@@ -42,21 +41,23 @@ export const setInputValue = (event, filters, key) => {
     }
 }
 
-export const getEvents = (filters, page) => {
+export const getEvents = (filters, page = 0, history) => {
     return dispatch => {
         dispatch(getEventsStart())
         const startDate = ISODateForAPIParams(filters.startDate.value)
         const endDate = ISODateForAPIParams(filters.endDate.value)    
         const params = `?size=18&page=${page}&city=${filters.location.value}&startDateTime=${startDate}&endDateTime=${endDate}&classificationName=${filters.category.value}`
 
-        axios.get('/events'+params)
+        return axios.get('/events'+params)
              .then(res => {
                  let events = []
                  if (res.data._embedded)
                     events = res.data._embedded.events
 
+                 if (history)
+                    history.push('/')
+
                  dispatch(getEventsSuccess(events, res.data.page))
-                 history.push('/')
              })
              .catch(err => {
                  Promise.reject(err)
