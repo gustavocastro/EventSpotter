@@ -12,11 +12,22 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!-- Maps style -->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' /> -->
     <title>Event Spotter | Find your event</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script>
+      var loadScript = function(src) {
+        var tag = document.createElement('link')
+        tag.async = true
+        tag.rel = 'stylesheet'
+        tag.href = src
+        document.getElementsByTagName('body').appendChild(tag)
+      }
+      loadScript('https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css')
+    </script>
   </body>
 </html>
