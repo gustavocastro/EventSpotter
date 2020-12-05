@@ -16,7 +16,7 @@ const getEventDetailsSuccess = (eventDetails) => {
 
 const getEventDetailsFail = (error) => {
     return {
-        type: actionTypes.GET_EVENT_DETAILS_SUCCESS,
+        type: actionTypes.GET_EVENT_DETAILS_FAIL,
         error
     }
 }

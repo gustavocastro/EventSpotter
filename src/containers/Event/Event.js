@@ -8,15 +8,12 @@ import EventMap from './EventMap/EventMap'
 import checkObject from '../../utilities/checkObject'
 import * as actions from '../../store/actions/index'
 
-const TOKEN = 'pk.eyJ1IjoiZ3VzdGF2b2Nhc3RybyIsImEiOiJjazU2eHhtYm4wZGp3M2VtcndhcGwwODRxIn0.WPYFl__cexVnS-1OcF45VA'
-
 class Event extends Component {
     componentDidMount() {
-        let id = this.props.match.params.id
+        const paramsId = this.props.match.params.id
 
-        if ((!this.props.loading && !this.props.eventFetched) || 
-            (this.props.event.id !== id && this.props.eventFetched)) {
-            this.props.onLoadEvent(id)
+        if (!this.props.loading && this.props.event.id !== paramsId) {
+            this.props.onLoadEvent(paramsId)
         }
     }
 
@@ -86,7 +83,6 @@ class Event extends Component {
                     <h3>Event Info</h3>
                     {info}
                     <EventMap
-                        token={TOKEN}
                         lat={+location.latitude}
                         lng={+location.longitude} />
                 </div>

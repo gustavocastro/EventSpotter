@@ -5,7 +5,7 @@ import { LocationOn } from '@material-ui/icons'
 class EventMap extends Component {
   state = {
     viewport: {
-      mapboxApiAccessToken: this.props.token,
+      mapboxApiAccessToken: process.env.REACT_APP_MAPGL_TOKEN,
       latitude: this.props.lat,
       longitude: this.props.lng,
       zoom: 12,

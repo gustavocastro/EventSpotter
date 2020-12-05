@@ -6,7 +6,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use((config) => {
     config.params = config.params || {}
-    config.params['apikey'] = 'vR2G50X7zf89GygjFjAy4vnKIiudkClW'
+    config.params['apikey'] = process.env.REACT_APP_TICKET_MASTER_TOKEN
     return config
 })
 
